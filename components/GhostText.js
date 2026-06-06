@@ -23,7 +23,7 @@ export default function GhostText({ children, className = "" }) {
     >
       <motion.span
         style={{ y }}
-        className="ghost-text text-[22vw] leading-none md:text-[16vw]"
+        className="ghost-text text-[15vw] leading-none md:text-[16vw]"
       >
         {children}
       </motion.span>
