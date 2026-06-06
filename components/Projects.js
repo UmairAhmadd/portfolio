@@ -73,11 +73,12 @@ const filters = ["All", "Web Apps", "Mobile", "AI"];
 function Thumbnail({ accent, badge, image, imageFit = "cover" }) {
   if (image) {
     return (
-      <div className="relative h-48 w-full overflow-hidden rounded-xl bg-ink/5">
+      <div className="relative h-44 w-full overflow-hidden rounded-xl bg-ink/5 sm:h-48">
         <img
           src={image}
           alt=""
-          className={`h-full w-full ${imageFit === "contain" ? "object-contain object-top" : "object-cover"}`}
+          loading="lazy"
+          className={`h-full w-full ${imageFit === "contain" ? "object-contain object-top" : "object-cover object-center"}`}
         />
         <span className="absolute right-4 top-4 rounded bg-black/40 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-white/80">
           {badge}
@@ -88,7 +89,7 @@ function Thumbnail({ accent, badge, image, imageFit = "cover" }) {
 
   return (
     <div
-      className="relative h-48 w-full overflow-hidden rounded-xl"
+      className="relative h-44 w-full overflow-hidden rounded-xl sm:h-48"
       style={{ backgroundColor: accent }}
     >
       <div className="absolute inset-0 opacity-90" style={{
