@@ -57,7 +57,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="overflow-x-hidden font-sans antialiased">{children}</body>
     </html>
   );
 }

@@ -73,7 +73,7 @@ const filters = ["All", "Web Apps", "Mobile", "AI"];
 function Thumbnail({ accent, badge, image, imageFit = "cover" }) {
   if (image) {
     return (
-      <div className="relative h-44 w-full overflow-hidden rounded-xl bg-ink/5 sm:h-48">
+      <div className="relative h-36 w-full overflow-hidden rounded-xl bg-ink/5 sm:h-48">
         <img
           src={image}
           alt=""
@@ -89,7 +89,7 @@ function Thumbnail({ accent, badge, image, imageFit = "cover" }) {
 
   return (
     <div
-      className="relative h-44 w-full overflow-hidden rounded-xl sm:h-48"
+      className="relative h-36 w-full overflow-hidden rounded-xl sm:h-48"
       style={{ backgroundColor: accent }}
     >
       <div className="absolute inset-0 opacity-90" style={{
@@ -133,7 +133,7 @@ export default function Projects() {
   );
 
   return (
-    <section id="projects" className="relative py-28 lg:py-36">
+    <section id="projects" className="relative overflow-hidden py-28 lg:py-36">
       <GhostText className="top-6">PORTFOLIO</GhostText>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">

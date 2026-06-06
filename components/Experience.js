@@ -73,7 +73,7 @@ function Timeline({ title, items }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-28 lg:py-36">
+    <section id="experience" className="relative overflow-hidden py-28 lg:py-36">
       <GhostText className="top-6">EXPERIENCE</GhostText>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">

@@ -25,7 +25,7 @@ const fadeUp = {
 
 export default function About() {
   return (
-    <section id="about" className="relative py-28 lg:py-36">
+    <section id="about" className="relative overflow-hidden py-28 lg:py-36">
       <GhostText className="top-6">ABOUT</GhostText>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
