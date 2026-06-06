@@ -39,15 +39,18 @@
   </g>
   <circle cx="690" cy="78" r="34" fill="url(#sun)"/>
 
-  <!-- Location -->
-  <path d="M44 44 a11 11 0 0 1 22 0 c0 9 -11 21 -11 21 c0 0 -11 -12 -11 -21 z" fill="#ffffff"/>
-  <circle cx="55" cy="44" r="4.5" fill="#3b82f6"/>
-  <text x="76" y="54" fill="#ffffff" font-size="28" font-weight="700">Islamabad</text>
-  <text x="46" y="86" fill="#dbeafe" font-size="15">Partly Sunny · Today</text>
+  <!-- Location + temperature (nudged right so left edge isn't clipped) -->
+  <g transform="translate(16,0)">
+    <!-- Location -->
+    <path d="M44 44 a11 11 0 0 1 22 0 c0 9 -11 21 -11 21 c0 0 -11 -12 -11 -21 z" fill="#ffffff"/>
+    <circle cx="55" cy="44" r="4.5" fill="#3b82f6"/>
+    <text x="76" y="54" fill="#ffffff" font-size="28" font-weight="700">Islamabad</text>
+    <text x="46" y="86" fill="#dbeafe" font-size="15">Partly Sunny · Today</text>
 
-  <!-- Big temperature -->
-  <text x="40" y="208" fill="#ffffff" font-size="110" font-weight="800" letter-spacing="-3">28<tspan font-size="48" font-weight="600" dy="-44">°C</tspan></text>
-  <text x="46" y="240" fill="#eff6ff" font-size="16">Feels like 30°C</text>
+    <!-- Big temperature -->
+    <text x="40" y="208" fill="#ffffff" font-size="110" font-weight="800" letter-spacing="-3">28<tspan font-size="48" font-weight="600" dy="-44">°C</tspan></text>
+    <text x="46" y="240" fill="#eff6ff" font-size="16">Feels like 30°C</text>
+  </g>
 
   <!-- Info card -->
   <rect x="32" y="256" width="736" height="48" rx="16" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1"/>
