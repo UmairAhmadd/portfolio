@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f3ff"/>
+      <stop offset="0.5" stop-color="#ede9fe"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="0.38" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#fbcfe8"/>
+      <stop offset="0.35" stop-color="#d8b4fe"/>
+      <stop offset="0.7" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </radialGradient>
+    <radialGradient id="orbGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#c4b5fd" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#c4b5fd" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="mic" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#7c3aed" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="320" fill="url(#bg)"/>
+  <!-- soft ambient blobs -->
+  <circle cx="150" cy="60" r="90" fill="#ddd6fe" opacity="0.55" filter="url(#blur)"/>
+  <circle cx="680" cy="280" r="100" fill="#bfdbfe" opacity="0.5" filter="url(#blur)"/>
+
+  <!-- Title -->
+  <text x="400" y="36" text-anchor="middle" fill="#6d28d9" font-size="14" font-weight="600" letter-spacing="2">Health Voice Analyzer</text>
+
+  <!-- Glowing AI orb -->
+  <circle cx="400" cy="150" r="78" fill="url(#orbGlow)" filter="url(#blur)"/>
+  <circle cx="400" cy="150" r="48" fill="url(#orb)"/>
+  <ellipse cx="384" cy="132" rx="16" ry="11" fill="#ffffff" opacity="0.55"/>
+  <circle cx="400" cy="150" r="48" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5"/>
+
+  <!-- Symptoms card (left) -->
+  <g filter="url(#soft)">
+    <rect x="40" y="116" width="186" height="64" rx="16" fill="#ffffff"/>
+  </g>
+  <rect x="56" y="132" width="32" height="32" rx="9" fill="#f3e8ff"/>
+  <path d="M62 148 h5 l3 -8 l5 16 l3 -8 h6" fill="none" stroke="#8b5cf6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="98" y="142" fill="#7c3aed" font-size="10" letter-spacing="1.5">SYMPTOMS</text>
+  <text x="98" y="164" fill="#3b0764" font-size="16" font-weight="700">2 detected</text>
+
+  <!-- Medicine card (right) -->
+  <g filter="url(#soft)">
+    <rect x="574" y="116" width="186" height="64" rx="16" fill="#ffffff"/>
+  </g>
+  <rect x="590" y="132" width="32" height="32" rx="9" fill="#e0e7ff"/>
+  <g transform="rotate(-40 606 148)">
+    <rect x="595" y="142" width="22" height="11" rx="5.5" fill="#818cf8"/>
+    <rect x="595" y="142" width="11" height="11" rx="5.5" fill="#c7d2fe"/>
+  </g>
+  <text x="632" y="142" fill="#4338ca" font-size="10" letter-spacing="1.5">MEDICINE</text>
+  <text x="632" y="164" fill="#312e81" font-size="16" font-weight="700">3 suggested</text>
+
+  <!-- Bottom: waveform bar with mic -->
+  <g filter="url(#soft)">
+    <rect x="150" y="248" width="500" height="48" rx="24" fill="#ffffff"/>
+  </g>
+  <g fill="url(#wave)">
+    <rect x="180" y="268" width="5" height="8"  rx="2.5"/>
+    <rect x="195" y="265" width="5" height="14" rx="2.5"/>
+    <rect x="210" y="262" width="5" height="20" rx="2.5"/>
+    <rect x="225" y="267" width="5" height="10" rx="2.5"/>
+    <rect x="240" y="264" width="5" height="16" rx="2.5"/>
+    <rect x="255" y="261" width="5" height="22" rx="2.5"/>
+    <rect x="270" y="268" width="5" height="9"  rx="2.5"/>
+    <rect x="285" y="265" width="5" height="15" rx="2.5"/>
+    <rect x="300" y="266" width="5" height="12" rx="2.5"/>
+    <rect x="315" y="263" width="5" height="18" rx="2.5"/>
+    <rect x="330" y="268" width="5" height="8"  rx="2.5"/>
+    <rect x="345" y="262" width="5" height="20" rx="2.5"/>
+    <rect x="360" y="267" width="5" height="11" rx="2.5"/>
+    <rect x="375" y="264" width="5" height="17" rx="2.5"/>
+    <rect x="390" y="269" width="5" height="7"  rx="2.5"/>
+    <rect x="405" y="263" width="5" height="19" rx="2.5"/>
+    <rect x="420" y="266" width="5" height="13" rx="2.5"/>
+    <rect x="435" y="262" width="5" height="21" rx="2.5"/>
+    <rect x="450" y="268" width="5" height="9"  rx="2.5"/>
+    <rect x="465" y="265" width="5" height="15" rx="2.5"/>
+    <rect x="480" y="264" width="5" height="18" rx="2.5"/>
+    <rect x="495" y="267" width="5" height="10" rx="2.5"/>
+    <rect x="510" y="263" width="5" height="16" rx="2.5"/>
+    <rect x="525" y="266" width="5" height="12" rx="2.5"/>
+    <rect x="540" y="268" width="5" height="8"  rx="2.5"/>
+    <rect x="555" y="265" width="5" height="14" rx="2.5"/>
+  </g>
+  <!-- mic button -->
+  <circle cx="616" cy="272" r="22" fill="url(#mic)"/>
+  <rect x="610" y="261" width="12" height="18" rx="6" fill="#ffffff"/>
+  <path d="M604 272 a12 12 0 0 0 24 0 M616 284 v5 M609 289 h14" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+</svg>
