@@ -35,7 +35,7 @@ const fadeUp = {
 };
 
 const stats = [
-  { value: "5", label: "Projects" },
+  { value: "5+", label: "Projects" },
   { value: "2", label: "Certifications" },
   { value: "60+", label: "Students Guided" },
 ];
@@ -59,7 +59,12 @@ export default function Hero() {
       <Particles />
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
-        <motion.div variants={container} initial="hidden" animate="show">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="order-2 md:order-1"
+        >
           <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
             <span className="rounded-full border border-black/10 bg-white px-4 py-1.5 text-xs font-medium text-ink/70">
               Full Stack Developer
@@ -121,7 +126,7 @@ export default function Hero() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex flex-col items-center gap-8"
+          className="order-1 flex flex-col items-center gap-8 md:order-2"
         >
           <motion.div variants={fadeUp} className="relative">
             {/* soft halo behind the photo */}

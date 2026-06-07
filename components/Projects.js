@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import GhostText from "./GhostText";
 import { ArrowUpRight, GitHubIcon } from "./icons";
@@ -12,6 +12,15 @@ const projects = [
     category: "Web Apps",
     description:
       "Full-stack platform — students apply for jobs, employers post listings. JWT auth, REST API.",
+    features: [
+      "Students can register, browse and apply for jobs",
+      "Employers can post job/internship listings",
+      "JWT-based authentication with role-based access",
+      "Student dashboard to track applications",
+      "Employer dashboard to manage listings",
+      "RESTful API with Node.js and Express.js",
+      "MongoDB database for data storage",
+    ],
     tags: ["Node.js", "Express", "MongoDB", "JWT"],
     github: "https://github.com/UmairAhmadd",
     live: "#",
@@ -24,6 +33,12 @@ const projects = [
     category: "AI",
     description:
       "React.js + OpenAI API real-time chat application with responsive UI.",
+    features: [
+      "Real-time chat with OpenAI GPT API",
+      "Responsive UI built with React.js",
+      "Chat history maintained in session",
+      "Clean modern chat interface",
+    ],
     tags: ["React.js", "OpenAI API", "JavaScript"],
     github: "https://github.com/UmairAhmadd",
     live: "#",
@@ -36,6 +51,13 @@ const projects = [
     category: "Mobile",
     description:
       "Flutter app with Google ML Kit OCR to scan receipts. Firebase backend.",
+    features: [
+      "Flutter mobile app for scanning receipts",
+      "Google ML Kit OCR for text extraction",
+      "Categorizes expenses automatically",
+      "Firebase Authentication and Firestore",
+      "Analytics dashboard for expense tracking",
+    ],
     tags: ["Flutter", "Firebase", "ML Kit"],
     github: "https://github.com/UmairAhmadd",
     live: "#",
@@ -49,6 +71,13 @@ const projects = [
     category: "AI",
     description:
       "AI-powered health analysis app — record or upload your voice, get instant health report with symptom analysis using Machine Learning.",
+    features: [
+      "Record or upload voice for health analysis",
+      "AI/ML model analyzes voice patterns",
+      "Generates health report with symptoms",
+      "Medicine and treatment suggestions",
+      "Built during Arfa Karim AI Bootcamp",
+    ],
     tags: ["AI", "Machine Learning"],
     github: "https://github.com/UmairAhmadd",
     live: "#",
@@ -60,6 +89,12 @@ const projects = [
     badge: "WEB APP",
     category: "Web Apps",
     description: "Real-time weather app with clean UI.",
+    features: [
+      "Real-time weather data via REST API",
+      "Search by city name",
+      "Shows temperature, humidity, wind speed",
+      "Clean responsive UI with HTML, CSS, JavaScript",
+    ],
     tags: ["JavaScript", "REST API", "CSS"],
     github: "https://github.com/UmairAhmadd",
     live: "#",
@@ -116,6 +151,164 @@ function Thumbnail({ accent, badge, image, imageFit = "cover" }) {
   );
 }
 
+function ProjectModal({ project, onClose }) {
+  // Lock body scroll and close on Escape while the modal is open.
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      onClick={onClose}
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/60 p-0 backdrop-blur-sm sm:items-center sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-label={project.title}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 40, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 40, scale: 0.98 }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
+        onClick={(e) => e.stopPropagation()}
+        className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-white shadow-2xl sm:max-h-[88vh] sm:rounded-2xl"
+      >
+        {/* Banner */}
+        <div className="relative h-40 w-full overflow-hidden rounded-t-3xl bg-ink/5 sm:h-48 sm:rounded-t-2xl">
+          {project.image ? (
+            <img
+              src={project.image}
+              alt=""
+              className={`h-full w-full ${
+                project.imageFit === "contain"
+                  ? "object-contain object-top"
+                  : "object-cover object-center"
+              }`}
+            />
+          ) : (
+            <div
+              className="h-full w-full"
+              style={{
+                background: `linear-gradient(135deg, ${project.accent} 0%, rgba(10,10,10,0.85) 100%)`,
+              }}
+            />
+          )}
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur transition-colors hover:bg-black/60"
+          >
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 sm:p-8">
+          <span className="inline-block rounded bg-paper px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-ink/50">
+            {project.badge}
+          </span>
+          <h3 className="mt-3 text-2xl font-bold tracking-tight text-ink">
+            {project.title}
+          </h3>
+          <p className="mt-3 text-sm leading-relaxed text-ink/60">
+            {project.description}
+          </p>
+
+          {project.features?.length > 0 && (
+            <div className="mt-6">
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-ink/40">
+                What it does
+              </h4>
+              <ul className="mt-3 space-y-2">
+                {project.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-start gap-2.5 text-sm leading-relaxed text-ink/70"
+                  >
+                    <svg
+                      className="mt-0.5 h-4 w-4 shrink-0 text-ink/40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div className="mt-6">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-ink/40">
+              Tech stack
+            </h4>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-paper px-3 py-1 text-xs font-medium text-ink/70"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5"
+            >
+              <GitHubIcon className="h-4 w-4" />
+              GitHub
+            </a>
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/live inline-flex items-center gap-1.5 rounded-full border border-black/15 px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-paper"
+            >
+              Live Preview
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5" />
+            </a>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 const card = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
@@ -123,6 +316,7 @@ const card = {
 
 export default function Projects() {
   const [active, setActive] = useState("All");
+  const [selected, setSelected] = useState(null);
 
   const visible = useMemo(
     () =>
@@ -176,7 +370,17 @@ export default function Projects() {
                 viewport={{ once: true, margin: "-60px" }}
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="group flex flex-col rounded-2xl border border-black/5 bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.03)] transition-shadow hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
+                onClick={() => setSelected(project)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelected(project);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-label={`View details for ${project.title}`}
+                className="group flex cursor-pointer flex-col rounded-2xl border border-black/5 bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.03)] transition-shadow hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/30"
               >
                 <Thumbnail accent={project.accent} badge={project.badge} image={project.image} imageFit={project.imageFit} />
 
@@ -209,6 +413,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="inline-flex items-center gap-1.5 text-sm text-ink/60 transition-colors hover:text-ink"
                   >
                     <GitHubIcon className="h-4 w-4" />
@@ -218,6 +423,7 @@ export default function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="group/live inline-flex items-center gap-1 text-sm text-ink/60 transition-colors hover:text-ink"
                   >
                     Live Preview
@@ -229,6 +435,15 @@ export default function Projects() {
           </AnimatePresence>
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {selected && (
+          <ProjectModal
+            project={selected}
+            onClose={() => setSelected(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }
