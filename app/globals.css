@@ -26,6 +26,21 @@ body {
   color: var(--ink);
 }
 
+/* Typewriter blinking cursor */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.typewriter-cursor {
+  animation: blink 1s step-end infinite;
+  font-weight: 400;
+}
+
 /* Ghost text behind section headings */
 .ghost-text {
   font-weight: 800;

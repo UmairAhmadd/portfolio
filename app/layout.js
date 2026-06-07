@@ -46,6 +46,9 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export const viewport = {

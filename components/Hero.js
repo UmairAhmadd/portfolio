@@ -4,6 +4,14 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, GitHubIcon } from "./icons";
 import Particles from "./Particles";
+import Typewriter from "./Typewriter";
+
+const roles = [
+  "Full Stack Developer",
+  "React.js Developer",
+  "Node.js Developer",
+  "Mobile App Developer",
+];
 import profilePhoto from "@/public/profile.jpg";
 
 const container = {
@@ -48,6 +56,16 @@ export default function Hero() {
             <br />
             <span className="font-extrabold text-ink">Umair Ahmad</span>
           </motion.h1>
+
+          <motion.div
+            variants={fadeUp}
+            className="mt-4 flex items-center text-xl font-semibold text-ink/70 sm:text-2xl"
+          >
+            <Typewriter
+              words={roles}
+              cursorClassName="font-light text-ink/50"
+            />
+          </motion.div>
 
           <motion.p
             variants={fadeUp}
