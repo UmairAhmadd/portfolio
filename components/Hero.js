@@ -28,11 +28,11 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center px-6 pb-20 pt-28 lg:px-8"
+      className="relative flex min-h-screen items-center px-6 pb-16 pt-24 sm:pb-20 sm:pt-28 lg:px-8"
     >
       <Particles />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
             <span className="rounded-full border border-black/10 bg-white px-4 py-1.5 text-xs font-medium text-ink/70">
@@ -42,7 +42,7 @@ export default function Hero() {
 
           <motion.h1
             variants={fadeUp}
-            className="mt-8 text-5xl leading-[0.95] tracking-tightest sm:text-6xl lg:text-7xl"
+            className="mt-6 text-4xl leading-[1] tracking-tightest sm:mt-8 sm:text-6xl sm:leading-[0.95] lg:text-7xl"
           >
             <span className="font-normal text-ink/80">Hi, I&apos;m</span>
             <br />

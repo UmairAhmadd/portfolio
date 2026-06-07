@@ -25,7 +25,7 @@ const fadeUp = {
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden py-28 lg:py-36">
+    <section id="about" className="relative overflow-hidden py-20 sm:py-28 lg:py-36">
       <GhostText className="top-6">ABOUT</GhostText>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
@@ -39,7 +39,7 @@ export default function About() {
           /About Me
         </motion.h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 gap-10 sm:mt-12 lg:grid-cols-2 lg:gap-12">
           <motion.div
             initial="hidden"
             whileInView="show"

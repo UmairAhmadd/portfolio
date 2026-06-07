@@ -133,7 +133,7 @@ export default function Projects() {
   );
 
   return (
-    <section id="projects" className="relative overflow-hidden py-28 lg:py-36">
+    <section id="projects" className="relative overflow-hidden py-20 sm:py-28 lg:py-36">
       <GhostText className="top-6">PORTFOLIO</GhostText>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
