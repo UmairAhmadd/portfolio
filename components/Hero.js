@@ -1,16 +1,23 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, GitHubIcon } from "./icons";
 import Particles from "./Particles";
 import Typewriter from "./Typewriter";
+import TypeOnce from "./TypeOnce";
+
+const headingSegments = [
+  { text: "Hi, I'm ", className: "font-normal text-ink/80" },
+  { break: true },
+  { text: "Umair Ahmad", className: "font-extrabold text-ink" },
+];
 
 const roles = [
   "Full Stack Developer",
   "React.js Developer",
   "Node.js Developer",
-  "Mobile App Developer",
 ];
 import profilePhoto from "@/public/profile.jpg";
 
@@ -33,6 +40,16 @@ const stats = [
 ];
 
 export default function Hero() {
+  const [headingDone, setHeadingDone] = useState(false);
+  const [showRoles, setShowRoles] = useState(false);
+
+  // After the heading finishes typing, pause 1s, then start cycling roles.
+  useEffect(() => {
+    if (!headingDone) return;
+    const t = setTimeout(() => setShowRoles(true), 1000);
+    return () => clearTimeout(t);
+  }, [headingDone]);
+
   return (
     <section
       id="home"
@@ -52,19 +69,23 @@ export default function Hero() {
             variants={fadeUp}
             className="mt-6 text-4xl leading-[1] tracking-tightest sm:mt-8 sm:text-6xl sm:leading-[0.95] lg:text-7xl"
           >
-            <span className="font-normal text-ink/80">Hi, I&apos;m</span>
-            <br />
-            <span className="font-extrabold text-ink">Umair Ahmad</span>
+            <TypeOnce
+              segments={headingSegments}
+              onDone={() => setHeadingDone(true)}
+              cursorClassName="font-light text-ink/40"
+            />
           </motion.h1>
 
           <motion.div
             variants={fadeUp}
-            className="mt-4 flex items-center text-xl font-semibold text-ink/70 sm:text-2xl"
+            className="mt-4 flex h-7 items-center text-xl font-semibold text-ink/70 sm:h-9 sm:text-2xl"
           >
-            <Typewriter
-              words={roles}
-              cursorClassName="font-light text-ink/50"
-            />
+            {showRoles && (
+              <Typewriter
+                words={roles}
+                cursorClassName="font-light text-ink/50"
+              />
+            )}
           </motion.div>
 
           <motion.p
