@@ -2,16 +2,17 @@
 
 import { useEffect, useState } from "react";
 
-const TYPING_SPEED = 90;
-const DELETING_SPEED = 45;
-const PAUSE_AFTER_TYPED = 1400;
-
 /**
- * Cycles through `words`, typing each one out character by character,
- * pausing, then deleting it before moving to the next.
+ * Cycles through `words` forever: types each one out character by character,
+ * pauses, deletes it, pauses again, then moves to the next word and repeats.
+ * With a single word it simply types/deletes that word in a loop.
  */
 export default function Typewriter({
   words = [],
+  typingSpeed = 90,
+  deletingSpeed = 45,
+  pauseAfterTyped = 1400,
+  pauseAfterDeleted = 400,
   className = "",
   cursorClassName = "",
 }) {
@@ -23,25 +24,36 @@ export default function Typewriter({
     if (words.length === 0) return;
     const current = words[index];
 
-    // Finished typing the full word — pause, then start deleting.
+    // Done typing — hold the full word, then start deleting.
     if (!deleting && subIndex === current.length) {
-      const t = setTimeout(() => setDeleting(true), PAUSE_AFTER_TYPED);
+      const t = setTimeout(() => setDeleting(true), pauseAfterTyped);
       return () => clearTimeout(t);
     }
 
-    // Finished deleting — advance to the next word.
+    // Done deleting — hold empty, then advance to the next word and retype.
     if (deleting && subIndex === 0) {
-      setDeleting(false);
-      setIndex((i) => (i + 1) % words.length);
-      return;
+      const t = setTimeout(() => {
+        setDeleting(false);
+        setIndex((i) => (i + 1) % words.length);
+      }, pauseAfterDeleted);
+      return () => clearTimeout(t);
     }
 
     const t = setTimeout(
       () => setSubIndex((s) => s + (deleting ? -1 : 1)),
-      deleting ? DELETING_SPEED : TYPING_SPEED
+      deleting ? deletingSpeed : typingSpeed
     );
     return () => clearTimeout(t);
-  }, [subIndex, deleting, index, words]);
+  }, [
+    subIndex,
+    deleting,
+    index,
+    words,
+    typingSpeed,
+    deletingSpeed,
+    pauseAfterTyped,
+    pauseAfterDeleted,
+  ]);
 
   return (
     <span className={className}>
