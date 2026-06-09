@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/CustomCursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,10 +60,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="overflow-x-hidden font-sans antialiased">
-        <CustomCursor />
-        {children}
-      </body>
+      <body className="overflow-x-hidden font-sans antialiased">{children}</body>
     </html>
   );
 }

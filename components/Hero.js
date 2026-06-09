@@ -7,6 +7,7 @@ import { ArrowUpRight, GitHubIcon } from "./icons";
 import Particles from "./Particles";
 import Typewriter from "./Typewriter";
 import TypeOnce from "./TypeOnce";
+import ScrollIndicator from "./ScrollIndicator";
 import profilePhoto from "@/public/profile.jpg";
 
 const headingSegments = [
@@ -161,6 +162,8 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
+
+      <ScrollIndicator />
     </section>
   );
 }

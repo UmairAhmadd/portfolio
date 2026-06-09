@@ -21,13 +21,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hide the native cursor on mouse devices — replaced by CustomCursor */
-@media (hover: hover) and (pointer: fine) {
-  * {
-    cursor: none !important;
-  }
-}
-
 body {
   background-color: var(--paper);
   color: var(--ink);
