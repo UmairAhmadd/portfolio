@@ -15,7 +15,7 @@ export default function ScrollIndicator() {
       <div className="flex h-9 w-5 items-start justify-center rounded-full border-2 border-ink/50 p-1">
         <motion.span
           animate={{ y: [0, 8, 0], opacity: [1, 0.4, 1] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="h-1.5 w-1.5 rounded-full bg-ink/70"
         />
       </div>
