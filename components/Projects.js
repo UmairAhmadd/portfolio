@@ -62,7 +62,7 @@ const projects = [
     github: "https://github.com/UmairAhmadd",
     live: "#",
     accent: "#064e3b",
-    image: "/receipt-scanner-mockup.svg",
+    image: "/receipt-scanner-dark.svg",
   },
   {
     title: "Health Voice Analyzer",
@@ -112,7 +112,7 @@ function Thumbnail({ accent, badge, image, imageFit = "cover" }) {
           src={image}
           alt=""
           loading="lazy"
-          className={`h-full w-full ${imageFit === "contain" ? "object-contain object-top" : "object-cover object-center"}`}
+          className={`h-full w-full transition-transform duration-300 ease-out group-hover:scale-105 ${imageFit === "contain" ? "object-contain object-top" : "object-cover object-center"}`}
         />
         <span className="absolute right-4 top-4 rounded bg-black/40 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-white/80">
           {badge}
