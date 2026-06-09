@@ -62,8 +62,7 @@ const projects = [
     github: "https://github.com/UmairAhmadd",
     live: "#",
     accent: "#064e3b",
-    image: "/receipt-scanner.png",
-    imageFit: "contain",
+    image: "/receipt-scanner-mockup.svg",
   },
   {
     title: "Health Voice Analyzer",

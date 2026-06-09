@@ -11,7 +11,7 @@ const paragraphs = [
 ];
 
 const skillGroups = [
-  { group: "Frontend", items: ["HTML", "CSS", "JavaScript", "React.js"] },
+  { group: "Frontend", items: ["HTML", "CSS", "JavaScript", "React.js", "Next.js"] },
   { group: "Mobile", items: ["Flutter", "Dart"] },
   { group: "Backend", items: ["Node.js", "Express.js"] },
   { group: "Database", items: ["MongoDB", "Firebase Firestore"] },

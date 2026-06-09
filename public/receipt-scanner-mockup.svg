@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef3fa"/>
+      <stop offset="0.5" stop-color="#e2eaf5"/>
+      <stop offset="1" stop-color="#d4e0f0"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c2433"/>
+      <stop offset="1" stop-color="#0c111b"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="accV" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#93c5fd"/>
+    </linearGradient>
+    <radialGradient id="splash" cx="0.5" cy="0.4" r="0.8">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </radialGradient>
+    <radialGradient id="logo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#93c5fd"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1e293b" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="320" fill="url(#bg)"/>
+  <circle cx="140" cy="70" r="90" fill="#ffffff" opacity="0.4"/>
+  <circle cx="690" cy="280" r="110" fill="#c7d8ef" opacity="0.45"/>
+
+  <!-- ===================== PHONE 1 — Splash "SRS" ===================== -->
+  <g transform="translate(66,40) rotate(-8 66 126)" filter="url(#shadow)">
+    <rect x="2" y="2" width="128" height="248" rx="24" fill="url(#frame)"/>
+    <rect x="52" y="7" width="28" height="6" rx="3" fill="#070b14"/>
+    <rect x="10" y="14" width="112" height="224" rx="16" fill="url(#splash)"/>
+    <circle cx="66" cy="104" r="28" fill="url(#logo)"/>
+    <text x="66" y="111" text-anchor="middle" fill="#0b1220" font-size="18" font-weight="800">SRS</text>
+    <text x="66" y="150" text-anchor="middle" fill="#e0ecff" font-size="11" font-weight="700">Smart Receipt</text>
+    <text x="66" y="164" text-anchor="middle" fill="#93c5fd" font-size="9" letter-spacing="1">SCANNER</text>
+    <circle cx="56" cy="196" r="3" fill="#3b82f6"/>
+    <circle cx="66" cy="196" r="3" fill="#60a5fa"/>
+    <circle cx="76" cy="196" r="3" fill="#1e3a8a"/>
+  </g>
+
+  <!-- ===================== PHONE 2 — Dashboard ===================== -->
+  <g transform="translate(246,30) rotate(-3 66 126)" filter="url(#shadow)">
+    <rect x="2" y="2" width="128" height="248" rx="24" fill="url(#frame)"/>
+    <rect x="52" y="7" width="28" height="6" rx="3" fill="#070b14"/>
+    <rect x="10" y="14" width="112" height="224" rx="16" fill="#0b1220"/>
+    <text x="20" y="42" fill="#e2e8f0" font-size="11" font-weight="700">Dashboard</text>
+    <!-- balance card -->
+    <rect x="18" y="50" width="96" height="44" rx="10" fill="url(#acc)"/>
+    <text x="28" y="68" fill="#dbeafe" font-size="7" letter-spacing="1">TOTAL SPENT</text>
+    <text x="28" y="85" fill="#ffffff" font-size="15" font-weight="800">$1,240</text>
+    <!-- expense rows -->
+    <g>
+      <rect x="18" y="104" width="96" height="22" rx="6" fill="#141d2e"/>
+      <circle cx="30" cy="115" r="4" fill="#60a5fa"/>
+      <rect x="40" y="110" width="34" height="3.5" rx="1.75" fill="#475569"/>
+      <text x="106" y="118" text-anchor="end" fill="#cbd5e1" font-size="8" font-weight="600">$48</text>
+    </g>
+    <g>
+      <rect x="18" y="130" width="96" height="22" rx="6" fill="#141d2e"/>
+      <circle cx="30" cy="141" r="4" fill="#34d399"/>
+      <rect x="40" y="136" width="42" height="3.5" rx="1.75" fill="#475569"/>
+      <text x="106" y="144" text-anchor="end" fill="#cbd5e1" font-size="8" font-weight="600">$120</text>
+    </g>
+    <g>
+      <rect x="18" y="156" width="96" height="22" rx="6" fill="#141d2e"/>
+      <circle cx="30" cy="167" r="4" fill="#fbbf24"/>
+      <rect x="40" y="162" width="28" height="3.5" rx="1.75" fill="#475569"/>
+      <text x="106" y="170" text-anchor="end" fill="#cbd5e1" font-size="8" font-weight="600">$16</text>
+    </g>
+    <g>
+      <rect x="18" y="182" width="96" height="22" rx="6" fill="#141d2e"/>
+      <circle cx="30" cy="193" r="4" fill="#a78bfa"/>
+      <rect x="40" y="188" width="38" height="3.5" rx="1.75" fill="#475569"/>
+      <text x="106" y="196" text-anchor="end" fill="#cbd5e1" font-size="8" font-weight="600">$73</text>
+    </g>
+  </g>
+
+  <!-- ===================== PHONE 3 — Scan Receipt ===================== -->
+  <g transform="translate(426,30) rotate(3 66 126)" filter="url(#shadow)">
+    <rect x="2" y="2" width="128" height="248" rx="24" fill="url(#frame)"/>
+    <rect x="52" y="7" width="28" height="6" rx="3" fill="#070b14"/>
+    <rect x="10" y="14" width="112" height="224" rx="16" fill="#0b1220"/>
+    <text x="66" y="40" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="700">Scan Receipt</text>
+    <!-- viewfinder corner brackets -->
+    <g stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round">
+      <path d="M24 66 V52 H38"/>
+      <path d="M94 52 H108 V66"/>
+      <path d="M24 150 V164 H38"/>
+      <path d="M94 164 H108 V150"/>
+    </g>
+    <!-- camera icon -->
+    <rect x="50" y="100" width="32" height="22" rx="5" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="59" y="95" width="14" height="6" rx="2" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="66" cy="111" r="6.5" fill="none" stroke="#60a5fa" stroke-width="2"/>
+    <!-- shutter -->
+    <circle cx="66" cy="196" r="16" fill="none" stroke="#475569" stroke-width="3"/>
+    <circle cx="66" cy="196" r="11" fill="url(#acc)"/>
+  </g>
+
+  <!-- ===================== PHONE 4 — Analytics ===================== -->
+  <g transform="translate(606,40) rotate(8 66 126)" filter="url(#shadow)">
+    <rect x="2" y="2" width="128" height="248" rx="24" fill="url(#frame)"/>
+    <rect x="52" y="7" width="28" height="6" rx="3" fill="#070b14"/>
+    <rect x="10" y="14" width="112" height="224" rx="16" fill="#0b1220"/>
+    <text x="20" y="42" fill="#e2e8f0" font-size="11" font-weight="700">Analytics</text>
+    <text x="106" y="42" text-anchor="end" fill="#34d399" font-size="9" font-weight="700">+18%</text>
+    <!-- chart card -->
+    <rect x="18" y="52" width="96" height="92" rx="10" fill="#111a2a"/>
+    <g fill="url(#accV)">
+      <rect x="28" y="104" width="13" height="28" rx="3"/>
+      <rect x="46" y="86"  width="13" height="46" rx="3"/>
+      <rect x="64" y="96"  width="13" height="36" rx="3"/>
+      <rect x="82" y="72"  width="13" height="60" rx="3"/>
+      <rect x="100" y="92" width="13" height="40" rx="3"/>
+    </g>
+    <!-- legend rows -->
+    <g>
+      <rect x="18" y="156" width="96" height="18" rx="5" fill="#141d2e"/>
+      <circle cx="29" cy="165" r="3.5" fill="#60a5fa"/>
+      <rect x="38" y="163" width="30" height="3.5" rx="1.75" fill="#475569"/>
+      <text x="106" y="168" text-anchor="end" fill="#cbd5e1" font-size="8" font-weight="600">62%</text>
+    </g>
+    <g>
+      <rect x="18" y="180" width="96" height="18" rx="5" fill="#141d2e"/>
+      <circle cx="29" cy="189" r="3.5" fill="#34d399"/>
+      <rect x="38" y="187" width="38" height="3.5" rx="1.75" fill="#475569"/>
+      <text x="106" y="192" text-anchor="end" fill="#cbd5e1" font-size="8" font-weight="600">38%</text>
+    </g>
+  </g>
+</svg>
