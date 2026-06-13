@@ -47,6 +47,25 @@ const projects = [
     image: "/job-portal.png",
   },
   {
+    title: "Health Voice Analyzer",
+    badge: "AI PROJECT",
+    category: "AI",
+    description:
+      "AI-powered health analysis app — record or upload your voice, get instant health report with symptom analysis using Machine Learning.",
+    features: [
+      "Record or upload voice for health analysis",
+      "AI/ML model analyzes voice patterns",
+      "Generates health report with symptoms",
+      "Medicine and treatment suggestions",
+      "Built during Arfa Karim AI Bootcamp",
+    ],
+    tags: ["AI", "Machine Learning"],
+    github: "https://github.com/UmairAhmadd",
+    live: "#",
+    accent: "#3b0764",
+    image: "/health-voice.svg",
+  },
+  {
     title: "Smart Receipt Scanner",
     badge: "MOBILE APP",
     category: "Mobile",
@@ -82,25 +101,6 @@ const projects = [
     live: "#",
     accent: "#312e81",
     image: "/ai-chat.svg",
-  },
-  {
-    title: "Health Voice Analyzer",
-    badge: "AI PROJECT",
-    category: "AI",
-    description:
-      "AI-powered health analysis app — record or upload your voice, get instant health report with symptom analysis using Machine Learning.",
-    features: [
-      "Record or upload voice for health analysis",
-      "AI/ML model analyzes voice patterns",
-      "Generates health report with symptoms",
-      "Medicine and treatment suggestions",
-      "Built during Arfa Karim AI Bootcamp",
-    ],
-    tags: ["AI", "Machine Learning"],
-    github: "https://github.com/UmairAhmadd",
-    live: "#",
-    accent: "#3b0764",
-    image: "/health-voice.svg",
   },
   {
     title: "Weather App",
