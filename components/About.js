@@ -11,11 +11,40 @@ const paragraphs = [
 ];
 
 const skillGroups = [
-  { group: "Frontend", items: ["HTML", "CSS", "JavaScript", "React.js", "Next.js"] },
+  {
+    group: "Frontend",
+    items: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+  },
   { group: "Mobile", items: ["Flutter", "Dart"] },
-  { group: "Backend", items: ["Node.js", "Express.js"] },
+  {
+    group: "Backend",
+    items: ["Node.js", "Express.js", "Socket.io", "REST APIs", "NextAuth.js"],
+  },
   { group: "Database", items: ["MongoDB", "Firebase Firestore"] },
-  { group: "Tools", items: ["Git", "GitHub", "Google ML Kit"] },
+  {
+    group: "Tools",
+    items: ["Git", "GitHub", "Google ML Kit", "Provider State Management"],
+  },
+  {
+    group: "Deployment",
+    items: [
+      "Vercel",
+      "Railway",
+      "MongoDB Atlas",
+      "Firebase Hosting",
+      "Cloudinary",
+      "GitHub",
+    ],
+  },
 ];
 
 const fadeUp = {
