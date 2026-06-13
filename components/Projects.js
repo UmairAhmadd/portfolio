@@ -311,15 +311,17 @@ function ProjectModal({ project, onClose }) {
               <GitHubIcon className="h-4 w-4" />
               GitHub
             </a>
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/live inline-flex items-center gap-1.5 rounded-full border border-black/15 px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-paper"
-            >
-              Live Preview
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5" />
-            </a>
+            {project.live && project.live !== "#" && (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/live inline-flex items-center gap-1.5 rounded-full border border-black/15 px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-paper"
+              >
+                Live Preview
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5" />
+              </a>
+            )}
           </div>
         </div>
       </motion.div>
@@ -437,16 +439,18 @@ export default function Projects() {
                     <GitHubIcon className="h-4 w-4" />
                     GitHub
                   </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="group/live inline-flex items-center gap-1 text-sm text-ink/60 transition-colors hover:text-ink"
-                  >
-                    Live Preview
-                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5" />
-                  </a>
+                  {project.live && project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="group/live inline-flex items-center gap-1 text-sm text-ink/60 transition-colors hover:text-ink"
+                    >
+                      Live Preview
+                      <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5" />
+                    </a>
+                  )}
                 </div>
               </motion.article>
             ))}
