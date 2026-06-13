@@ -7,6 +7,25 @@ import { ArrowUpRight, GitHubIcon } from "./icons";
 
 const projects = [
   {
+    title: "ChatFlow — Real-time Team Chat Application",
+    badge: "FULL STACK",
+    category: "Web Apps",
+    description:
+      "Full-stack real-time chat app for remote teams. Real-time messaging, typing indicators, read receipts, group chats, JWT auth, Google OAuth, and workspace invite system.",
+    features: [
+      "Real-time messaging powered by Socket.io",
+      "Typing indicators and read receipts",
+      "Group chats and direct messages",
+      "JWT authentication with Google OAuth",
+      "Workspace invite system for teams",
+    ],
+    tags: ["Next.js", "Node.js", "Socket.io", "MongoDB"],
+    github: "https://github.com/UmairAhmadd",
+    live: "https://chatflow-teams.vercel.app/login",
+    accent: "#1e3a8a",
+    image: "/chatflow.png",
+  },
+  {
     title: "Job Board & Internship Portal",
     badge: "FULL STACK",
     category: "Web Apps",
@@ -28,24 +47,6 @@ const projects = [
     image: "/job-portal.png",
   },
   {
-    title: "AI Chat App",
-    badge: "AI PROJECT",
-    category: "AI",
-    description:
-      "React.js + OpenAI API real-time chat application with responsive UI.",
-    features: [
-      "Real-time chat with OpenAI GPT API",
-      "Responsive UI built with React.js",
-      "Chat history maintained in session",
-      "Clean modern chat interface",
-    ],
-    tags: ["React.js", "OpenAI API", "JavaScript"],
-    github: "https://github.com/UmairAhmadd",
-    live: "#",
-    accent: "#312e81",
-    image: "/ai-chat.svg",
-  },
-  {
     title: "Smart Receipt Scanner",
     badge: "MOBILE APP",
     category: "Mobile",
@@ -63,6 +64,24 @@ const projects = [
     live: "#",
     accent: "#064e3b",
     image: "/receipt-scanner-dark.svg",
+  },
+  {
+    title: "AI Chat App",
+    badge: "AI PROJECT",
+    category: "AI",
+    description:
+      "React.js + OpenAI API real-time chat application with responsive UI.",
+    features: [
+      "Real-time chat with OpenAI GPT API",
+      "Responsive UI built with React.js",
+      "Chat history maintained in session",
+      "Clean modern chat interface",
+    ],
+    tags: ["React.js", "OpenAI API", "JavaScript"],
+    github: "https://github.com/UmairAhmadd",
+    live: "#",
+    accent: "#312e81",
+    image: "/ai-chat.svg",
   },
   {
     title: "Health Voice Analyzer",
