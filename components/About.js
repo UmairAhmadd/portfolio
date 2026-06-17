@@ -5,7 +5,6 @@ import GhostText from "./GhostText";
 
 const paragraphs = [
   "CS student at COMSATS University Islamabad, currently in 5th semester.",
-  "Worked as Lab Demonstrator for OOP — guided 60+ students.",
   "Completed AI Bootcamp at Arfa Karim Technology Incubator, Lahore.",
   "I learn by building real projects — every project teaches something new.",
 ];

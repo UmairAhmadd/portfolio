@@ -3,15 +3,6 @@
 import { motion } from "framer-motion";
 import GhostText from "./GhostText";
 
-const experience = [
-  {
-    role: "Lab Demonstrator – OOP",
-    org: "COMSATS University",
-    period: "Sep 2025 – Dec 2025",
-    detail: "Guided 60+ students across 2 lab classes.",
-  },
-];
-
 const certifications = [
   {
     role: "AI Bootcamp",
@@ -73,8 +64,8 @@ function Timeline({ title, items }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative overflow-hidden py-20 sm:py-28 lg:py-36">
-      <GhostText className="top-6">EXPERIENCE</GhostText>
+    <section id="certifications" className="relative overflow-hidden py-20 sm:py-28 lg:py-36">
+      <GhostText className="top-6">CERTIFICATIONS</GhostText>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
         <motion.h2
@@ -84,11 +75,10 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl"
         >
-          /Experience &amp; Certifications
+          /Certifications
         </motion.h2>
 
         <div className="mt-10 grid grid-cols-1 gap-10 sm:mt-12 lg:grid-cols-2 lg:gap-12">
-          <Timeline title="Experience" items={experience} />
           <Timeline title="Certifications" items={certifications} />
         </div>
       </div>

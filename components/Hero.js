@@ -35,12 +35,6 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const stats = [
-  { value: "10+", label: "Projects" },
-  { value: "2", label: "Certifications" },
-  { value: "60+", label: "Students Guided" },
-];
-
 export default function Hero() {
   const [headingDone, setHeadingDone] = useState(false);
   const [showRoles, setShowRoles] = useState(false);
@@ -129,7 +123,7 @@ export default function Hero() {
           animate="show"
           className="order-1 flex flex-col items-center gap-8 md:order-2"
         >
-          <motion.div variants={fadeUp} className="relative">
+          <motion.div variants={fadeUp} className="relative mt-8 sm:mt-12 lg:mt-20">
             {/* soft halo behind the photo */}
             <div className="absolute inset-0 -z-10 scale-110 rounded-full bg-white/60 blur-2xl" />
             <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white bg-white shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-black/5 sm:h-64 sm:w-64">
@@ -143,23 +137,6 @@ export default function Hero() {
               />
             </div>
           </motion.div>
-
-          <div className="grid w-full grid-cols-3 gap-4">
-            {stats.map((stat) => (
-              <motion.div
-                key={stat.label}
-                variants={fadeUp}
-                className="rounded-2xl border border-black/5 bg-white p-4 text-center shadow-[0_1px_3px_rgba(0,0,0,0.03)] sm:p-5"
-              >
-                <div className="text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
-                  {stat.value}
-                </div>
-                <div className="mt-1 text-xs text-ink/50 sm:text-sm">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
       </div>
 
