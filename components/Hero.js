@@ -123,7 +123,7 @@ export default function Hero() {
           animate="show"
           className="order-1 flex flex-col items-center gap-8 md:order-2"
         >
-          <motion.div variants={fadeUp} className="relative mt-8 sm:mt-12 lg:mt-20">
+          <motion.div variants={fadeUp} className="relative mt-2 sm:mt-6 lg:mt-14">
             {/* soft halo behind the photo */}
             <div className="absolute inset-0 -z-10 scale-110 rounded-full bg-white/60 blur-2xl" />
             <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white bg-white shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-black/5 sm:h-64 sm:w-64">
