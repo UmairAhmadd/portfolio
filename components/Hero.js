@@ -157,25 +157,6 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-
-            {/* floating mini cards */}
-            <motion.div
-              aria-hidden="true"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="pointer-events-none absolute -left-3 top-8 hidden rounded-xl border border-black/5 bg-white px-3 py-2 text-xs font-semibold text-ink shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:flex sm:items-center sm:gap-2"
-            >
-              <span className="h-2 w-2 rounded-full bg-emerald-500" />
-              Real-time
-            </motion.div>
-            <motion.div
-              aria-hidden="true"
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              className="pointer-events-none absolute -right-3 bottom-8 hidden rounded-xl border border-black/5 bg-white px-3 py-2 text-xs font-semibold text-ink shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:block"
-            >
-              Flutter · React · AI
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>
