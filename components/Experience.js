@@ -65,7 +65,9 @@ function Timeline({ title, items }) {
 export default function Experience() {
   return (
     <section id="certifications" className="relative overflow-hidden py-20 sm:py-28 lg:py-36">
-      <GhostText className="top-6">CERTIFICATIONS</GhostText>
+      <GhostText className="top-6" sizeClassName="text-[10vw] leading-none">
+        CERTIFICATIONS
+      </GhostText>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
         <motion.h2

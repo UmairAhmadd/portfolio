@@ -7,7 +7,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
  * Huge light-gray word sitting behind a section heading, with a subtle
  * parallax drift as the section scrolls through the viewport.
  */
-export default function GhostText({ children, className = "" }) {
+export default function GhostText({
+  children,
+  className = "",
+  sizeClassName = "text-[15vw] leading-none md:text-[16vw]",
+}) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -23,7 +27,7 @@ export default function GhostText({ children, className = "" }) {
     >
       <motion.span
         style={{ y }}
-        className="ghost-text text-[15vw] leading-none md:text-[16vw]"
+        className={`ghost-text ${sizeClassName}`}
       >
         {children}
       </motion.span>
