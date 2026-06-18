@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import GhostText from "./GhostText";
 
 const paragraphs = [
-  "CS student at COMSATS University Islamabad, currently in 5th semester.",
-  "Completed AI Bootcamp at Arfa Karim Technology Incubator, Lahore.",
-  "I learn by building real projects — every project teaches something new.",
+  "BS Computer Science student at COMSATS University with hands-on experience building full-stack web apps, Flutter mobile apps, real-time systems, and AI-powered applications.",
+  "I focus on shipping production-minded products — clean UI, scalable backends, and practical AI features that solve real problems.",
+  "Completed an AI Bootcamp at Arfa Karim Technology Incubator, Lahore, and keep sharpening my skills by building and shipping real projects.",
 ];
 
 const skillGroups = [

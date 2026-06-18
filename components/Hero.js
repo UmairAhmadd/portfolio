@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, GitHubIcon } from "./icons";
+import { ArrowUpRight } from "./icons";
 import Particles from "./Particles";
 import Typewriter from "./Typewriter";
 import TypeOnce from "./TypeOnce";
@@ -21,6 +21,13 @@ const roles = [
   "React.js Developer",
   "Node.js Developer",
   "Mobile App Developer",
+];
+
+const badges = [
+  "Full Stack Web Apps",
+  "Flutter Apps",
+  "AI Features",
+  "Real-time Systems",
 ];
 
 const container = {
@@ -53,17 +60,31 @@ export default function Hero() {
     >
       <Particles />
 
+      {/* soft ambient glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-1/3 -z-0 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.12),transparent_70%)] blur-2xl lg:left-[68%]"
+      />
+
       <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="order-2 md:order-1"
+          className="order-2 text-center md:order-1 md:text-left"
         >
-          <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
-            <span className="rounded-full border border-black/10 bg-white px-4 py-1.5 text-xs font-medium text-ink/70">
-              Full Stack Developer
-            </span>
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-wrap justify-center gap-2 md:justify-start"
+          >
+            {badges.map((b) => (
+              <span
+                key={b}
+                className="rounded-full border border-black/10 bg-white px-3.5 py-1.5 text-xs font-medium text-ink/70 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
+              >
+                {b}
+              </span>
+            ))}
           </motion.div>
 
           <motion.h1
@@ -79,7 +100,7 @@ export default function Hero() {
 
           <motion.div
             variants={fadeUp}
-            className="mt-4 flex h-7 items-center text-xl font-semibold text-ink/70 sm:h-9 sm:text-2xl"
+            className="mt-4 flex h-7 items-center justify-center text-xl font-semibold text-ink/70 sm:h-9 sm:text-2xl md:justify-start"
           >
             {showRoles && (
               <Typewriter
@@ -91,28 +112,28 @@ export default function Hero() {
 
           <motion.p
             variants={fadeUp}
-            className="mt-6 max-w-md text-base leading-relaxed text-ink/60"
+            className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-ink/60 md:mx-0"
           >
-            Building real-world web and mobile applications. Passionate about
-            clean code and modern technology.
+            I build full-stack web and mobile apps with clean UI, scalable
+            backend, real-time features, and AI-powered functionality.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-4">
+          <motion.div
+            variants={fadeUp}
+            className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start"
+          >
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5"
+              className="group inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-ink px-7 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5 sm:w-auto"
             >
               View Projects
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
-              href="https://github.com/UmairAhmadd"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-black/15 px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-white"
+              href="#contact"
+              className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border border-black/15 px-7 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-white sm:w-auto"
             >
-              <GitHubIcon className="h-4 w-4" />
-              GitHub
+              Hire Me
             </a>
           </motion.div>
         </motion.div>
@@ -136,6 +157,25 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
+
+            {/* floating mini cards */}
+            <motion.div
+              aria-hidden="true"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="pointer-events-none absolute -left-3 top-8 hidden rounded-xl border border-black/5 bg-white px-3 py-2 text-xs font-semibold text-ink shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:flex sm:items-center sm:gap-2"
+            >
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Real-time
+            </motion.div>
+            <motion.div
+              aria-hidden="true"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+              className="pointer-events-none absolute -right-3 bottom-8 hidden rounded-xl border border-black/5 bg-white px-3 py-2 text-xs font-semibold text-ink shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:block"
+            >
+              Flutter · React · AI
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

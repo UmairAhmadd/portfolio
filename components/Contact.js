@@ -52,10 +52,45 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="mt-4 text-lg text-ink/60"
+          className="mt-4 max-w-xl text-lg text-ink/60"
         >
-          Open to internship opportunities in Pakistan.
+          Open to internships, freelance projects, and real-world product
+          collaborations. Have something in mind? Let&apos;s talk.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+        >
+          <a
+            href="mailto:umairahmad3921@gmail.com"
+            className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-ink px-6 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5 sm:w-auto"
+          >
+            <MailIcon className="h-4 w-4" />
+            Email Me
+          </a>
+          <a
+            href="https://github.com/UmairAhmadd"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border border-black/15 px-6 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-white sm:w-auto"
+          >
+            <GitHubIcon className="h-4 w-4" />
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/umair-ahmad-a87753274"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border border-black/15 px-6 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-white sm:w-auto"
+          >
+            <LinkedInIcon className="h-4 w-4" />
+            LinkedIn
+          </a>
+        </motion.div>
 
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           <motion.div
