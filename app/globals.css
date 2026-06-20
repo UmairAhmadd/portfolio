@@ -21,6 +21,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Offset anchored sections so the fixed navbar doesn't cover them */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
 body {
   background-color: var(--paper);
   color: var(--ink);

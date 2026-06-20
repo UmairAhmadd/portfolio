@@ -16,6 +16,12 @@ const certifications = [
     period: "2025",
     detail: "Core supervised learning algorithms and model evaluation.",
   },
+  {
+    role: "Generative AI and LLMs: Architecture and Data Preparation",
+    org: "IBM (Coursera)",
+    period: "2026",
+    detail: "Covers LLM architecture fundamentals and data preparation techniques.",
+  },
 ];
 
 const fadeUp = {
