@@ -7,6 +7,35 @@ import { ArrowUpRight, GitHubIcon } from "./icons";
 
 const projects = [
   {
+    title: "StockPilot — Inventory & Sales Management SaaS",
+    badge: "FULL STACK",
+    category: "Web Apps",
+    description:
+      "Built a full-stack inventory and sales management SaaS for electronics retailers using Next.js, PostgreSQL, Prisma, Supabase, and Vercel. Implemented a responsive analytics dashboard, product and supplier modules, sales orders, purchase orders, stock movements, low-stock alerts, and a role-based backend API structure.",
+    features: [
+      "Responsive analytics dashboard",
+      "Product and supplier modules",
+      "Sales orders and purchase orders",
+      "Stock movements with low-stock alerts",
+      "Role-based backend API structure",
+    ],
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Supabase", "Vercel"],
+    stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Supabase", "Vercel"],
+    role: "Full-stack Developer",
+    type: "Inventory & Sales SaaS",
+    status: "Completed",
+    challenges: [
+      "Modeling inventory, orders, and stock movements in PostgreSQL/Prisma",
+      "Role-based access control across the API",
+      "Real-time low-stock alerting and analytics",
+    ],
+    result: "Deployed live on Vercel for electronics retailers.",
+    github: "https://github.com/UmairAhmadd/stockpilot",
+    live: "https://stockpilot-beige.vercel.app/",
+    accent: "#0f766e",
+    image: "/stockpilot.png",
+  },
+  {
     title: "ChatFlow — Real-time Team Chat",
     badge: "FULL STACK",
     category: "Web Apps",
@@ -64,6 +93,33 @@ const projects = [
     image: "/receipt-scanner-dark.svg",
   },
   {
+    title: "Health Voice Analyzer",
+    badge: "AI PROJECT",
+    category: "AI",
+    description:
+      "AI-powered health analysis app that records or uploads voice and generates symptom-based insights using machine learning.",
+    features: [
+      "Voice recording/upload",
+      "AI-based health insight generation",
+      "Clean responsive interface",
+      "Result display system",
+      "Practical AI use case",
+    ],
+    tags: ["AI", "Machine Learning", "Voice"],
+    stack: ["Python", "Machine Learning", "Audio Processing"],
+    role: "AI Developer",
+    type: "Health AI App",
+    status: "Prototype",
+    challenges: [
+      "Extracting features from raw voice signals",
+      "Mapping audio patterns to symptom insights",
+    ],
+    github: "https://github.com/UmairAhmadd",
+    live: "#",
+    accent: "#3b0764",
+    image: "/health-voice.svg",
+  },
+  {
     title: "Job Board & Internship Portal",
     badge: "FULL STACK",
     category: "Web Apps",
@@ -90,33 +146,6 @@ const projects = [
     live: "#",
     accent: "#1f2937",
     image: "/job-portal.png",
-  },
-  {
-    title: "Health Voice Analyzer",
-    badge: "AI PROJECT",
-    category: "AI",
-    description:
-      "AI-powered health analysis app that records or uploads voice and generates symptom-based insights using machine learning.",
-    features: [
-      "Voice recording/upload",
-      "AI-based health insight generation",
-      "Clean responsive interface",
-      "Result display system",
-      "Practical AI use case",
-    ],
-    tags: ["AI", "Machine Learning", "Voice"],
-    stack: ["Python", "Machine Learning", "Audio Processing"],
-    role: "AI Developer",
-    type: "Health AI App",
-    status: "Prototype",
-    challenges: [
-      "Extracting features from raw voice signals",
-      "Mapping audio patterns to symptom insights",
-    ],
-    github: "https://github.com/UmairAhmadd",
-    live: "#",
-    accent: "#3b0764",
-    image: "/health-voice.svg",
   },
   {
     title: "AI Chat App",
