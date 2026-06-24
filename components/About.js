@@ -28,7 +28,7 @@ const skillGroups = [
     group: "Backend",
     items: ["Node.js", "Express.js", "Socket.io", "REST APIs", "NextAuth.js"],
   },
-  { group: "Database", items: ["MongoDB", "Firebase Firestore"] },
+  { group: "Database", items: ["MongoDB", "Firebase Firestore", "PostgreSQL", "Supabase"] },
   {
     group: "Tools",
     items: ["Git", "GitHub", "Google ML Kit", "Provider State Management"],
